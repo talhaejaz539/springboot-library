@@ -21,6 +21,16 @@ public class Author {
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
 
+    // No-arg constructor (required by JPA)
+    public Author() {
+    }
+
+    // Parameterized constructor for testing
+    public Author(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     // Getters and Setters
 
     public String getId() {
